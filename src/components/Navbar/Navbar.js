@@ -1,66 +1,55 @@
-import React, { Component, useState, useEffect } from 'react';
-import './Navbar.css'
-import {Button} from "../Button"
+import React from 'react'
+import './Style.css'
 
-const MenuItems = [
-    {
-        title: 'Home',
-        url: '#',
-        cName: 'nav-links'
-    },
-    {
-       title: 'Services',
-       url: '#',
-       cName: 'nav-links'
-   },
-   {
-       title: 'Products',
-       url: '#',
-       cName: 'nav-links'
-   },
-   {
-       title: 'Contact Us',
-       url: '#',
-       cName: 'nav-links'
-   },
-   {
-       title: 'Sign in',
-       url: '#',
-       cName: 'nav-links-mobile'
-   },
-   ]
-
-   const Navbar = () => {
-    const [clicked, setClicked] = useState( false );
-    
-    
-    const handleClick = () => setClicked( !clicked );
-    useEffect(() => {
-        console.log("anesti");
-    }, [clicked]);    
-
-    return (
-      <nav className="NavbarItems">
-        <h1 className="navbar-logo">
-          React<i className="fab fa-react"></i>
-        </h1>
-        <div className="menu-icon" onClick={handleClick}>
-            <i className={ clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-        </div>
-        <ul className={ clicked ? 'Nav-menu active': 'nav-menu'}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        <Button>Sign Up</Button>
-      </nav>
-    );
-  }
+const navSlide = ()=>{
   
-  export default Navbar;
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+
+  nav.classList.toggle('nav-active');
+
+  navLinks.forEach((link,index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+      link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +0.3}s`;
+      }
+  });
+
+  burger.classList.toggle('toggle');
+}
+
+
+export const Navbar = () => {
+  return (
+    <div>
+      <nav>
+        <div className="logo" >
+          <h4>Demo-eShop</h4>
+         </div>
+         <ul className="nav-links">
+            <li>
+              <a href="#">home</a>
+              </li>
+            <li>
+              <a href="#">about</a>
+            </li>
+            <li>
+              <a href="#">work</a></li>
+            <li>
+              <a href="#">Projeckts</a>
+            </li>
+         </ul>
+         <div className="burger" onClick={navSlide}>
+           <div class="line1"></div>
+           <div class="line2"></div>
+           <div class="line3"></div>
+         </div>
+      </nav>
+  </div>
+    
+  )
+}
+
