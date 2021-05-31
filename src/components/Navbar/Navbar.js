@@ -1,6 +1,9 @@
 import React from "react";
 import Searchbar from "./Searchbar/Searchbar";
 import "./Style.css";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const navSlide = () => {
   const burger = document.querySelector(".burger");
@@ -36,13 +39,19 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">about</a>
+            <a href="#">
+              <FavoriteBorderIcon id="favorite-btn" />
+            </a>
           </li>
           <li>
-            <a href="#">work</a>
+            <a href="#">
+              <ShoppingCartIcon id="shopping-cart-btn" />
+            </a>
           </li>
           <li>
-            <a href="#">Projeckts</a>
+            <a href="#">
+              <AccountCircleIcon id="account-btn" />
+            </a>
           </li>
         </ul>
         <div className="burger" onClick={navSlide}>

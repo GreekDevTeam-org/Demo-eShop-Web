@@ -6,14 +6,17 @@
 
 nav {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   min-height: 8vh;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 29%,
-    rgba(233, 132, 8, 1) 69%
-  );
+  background: linear-gradient(90deg, #111 29%, rgb(131, 73, 2) 69%);
+}
+
+#account-btn,
+#shopping-cart-btn,
+#favorite-btn {
+  font-size: 30px;
+  margin-top: 33%;
 }
 
 .logo {
@@ -39,7 +42,7 @@ nav {
   font-weight: bold;
   font-size: 14px;
   text-decoration: none;
-  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .burger {
@@ -68,8 +71,7 @@ nav {
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: #5d4954;
-    display: flex;
+    background: rgb(57, 56, 59);
     flex-direction: column;
     align-items: center;
     width: 50%;
