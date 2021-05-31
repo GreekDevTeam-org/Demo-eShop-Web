@@ -71,12 +71,13 @@ nav {
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background: rgb(57, 56, 59);
+    background: #111;
     flex-direction: column;
     align-items: center;
     width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    opacity: 0.86;
   }
   .nav-links li {
     opacity: 0;
