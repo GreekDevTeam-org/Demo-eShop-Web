@@ -32,16 +32,16 @@
   right: 0px;
   height: 42px;
   width: 43px;
-  color: #111;
+  color: rgb(228, 222, 222);
   transform: translateY(-50%);
   line-height: 45px;
   text-align: center;
-  font-size: 27px;
+  font-size: 23px;
   border-radius: 150px;
   z-index: 1;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  margin-top: -15px;
+  margin-top: -17px;
 }
 .search-box .search-btn.active {
   right: 97px;
