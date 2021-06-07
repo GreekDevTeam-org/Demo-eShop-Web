@@ -5,6 +5,8 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
+
+
 const navSlide = () => {
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".nav-links");
@@ -49,9 +51,9 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="signup">
               <AccountCircleIcon id="account-btn" />
-            </a>
+            </a>  
           </li>
         </ul>
         <div className="burger" onClick={navSlide}>
