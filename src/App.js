@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Pages/Home";
 import Footer from "./components/Fouter/Footer";
 import Signup from "./components/Pages/Signup";
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from "C:/Users/stifler/Documents/Workspace/Js Workspace/react/react-DemoEshopfragos/Demo-Eshop/src/contexts/AuthContext";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
+      <div className="App">
       <Router>
         <Navbar />
         <Switch>
@@ -24,6 +26,8 @@ function App() {
       </Router>
       
     </div>
+    </AuthProvider>
+    
   );
 }
 
