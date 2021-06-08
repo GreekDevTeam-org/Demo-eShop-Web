@@ -51,7 +51,7 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="signup">
+            <a href="login">
               <AccountCircleIcon id="account-btn" />
             </a>  
           </li>
