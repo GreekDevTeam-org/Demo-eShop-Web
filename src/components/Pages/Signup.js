@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from 'C:/Users/stifler/Documents/Workspace/Js Workspace/react/react-DemoEshopfragos/Demo-Eshop/src/contexts/AuthContext'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function Signup() {
 
@@ -11,6 +11,7 @@ export default function Signup() {
     const { signup } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     async function handleSubmit(e) {
        e.preventDefault()
@@ -24,6 +25,7 @@ export default function Signup() {
         setLoading(true)
         await signup(emailRef.current.value, passwordRef.current.value)
       } catch {
+         history.push('login')
          setError('Faild to create an account')
       }
         setLoading(false)
