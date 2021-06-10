@@ -52,7 +52,7 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href={useAuth?.currentUser ? "Login" : "#"}>
+            <a href={useAuth()?.currentUser ? "/profile" : "/login"}>
               <AccountCircleIcon id="account-btn" />
             </a>
           </li>

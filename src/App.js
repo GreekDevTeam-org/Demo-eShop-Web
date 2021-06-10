@@ -8,6 +8,7 @@ import Signup from "./components/Pages/Signup";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import Login from "./components/Pages/Login";
+import UserProfile from "./components/Pages/UserProfile"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <div className="w=100" style={{ maxWidth: "400px" }}>
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
+                <Route path="/profile" component={UserProfile} />
               </div>
             </Container>
           </Switch>
