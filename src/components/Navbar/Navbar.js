@@ -4,8 +4,7 @@ import "./Style.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-
-
+import { useAuth } from "../../contexts/AuthContext";
 
 const navSlide = () => {
   const burger = document.querySelector(".burger");
@@ -32,7 +31,9 @@ export const Navbar = () => {
     <div>
       <nav>
         <div className="logo">
-          <h4>Demo-eShop</h4>
+          <a href="/">
+            <img src="logo.png" />
+          </a>
         </div>
         <ul className="nav-links">
           <li>
@@ -51,9 +52,9 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="login">
+            <a href={useAuth?.currentUser ? "Login" : "#"}>
               <AccountCircleIcon id="account-btn" />
-            </a>  
+            </a>
           </li>
         </ul>
         <div className="burger" onClick={navSlide}>
