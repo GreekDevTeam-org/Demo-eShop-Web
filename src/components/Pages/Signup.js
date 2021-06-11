@@ -16,18 +16,20 @@ export default function Signup() {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Password do not match");
+      return setError("Password do not match")
     }
+    
 
     try {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-    } catch {
-      history.push("login");
-      setError("Faild to create an account");
+      history.push("login")
+    } catch  {
+      
+      setError("Faild to create an account")
     }
-    setLoading(false);
+    setLoading(false)
   }
   return (
     <>
